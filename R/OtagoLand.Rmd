@@ -1,0 +1,288 @@
+---
+main_topsize: 0.2 #percent coverage of the poster
+main_bottomsize: 0.1
+#ESSENTIALS
+main_findings:
+  - "**Otago University Default Portrait**"
+
+pagetitle: '**Otago University Default Portrait**'
+author:
+  - name: '**Matt Bixley**'
+    affil: 1
+    main: true
+    orcid: '0000-0002-5019-6377'
+    twitter: mattbixley 
+    email: mattbixley72@gmail.com
+  - name: My G. Mate
+    affil: 2
+    main: true
+    email: 'my.mate@otago.ac.nz'
+  - name: Person Three
+    affil: 3
+  - name: Person Four
+    affil: 2
+  - name: Person Five
+    affil: 2
+  - name: Person Six
+    affil: 1
+  - name: A. Seventh Author
+    affil: 2
+affiliation:
+  - num: 1
+    address: Department of Biochemistry, University of Otago
+  - num: 2
+    address: The Carpentries
+    
+#---POSTER SIZE---###
+poster_height:	"36in"
+poster_width:	"48in"
+
+#---LOGOS---#
+logocentre_name: "../figures/ou-logo.png"
+logoleft_name: "../figures/posterdownlogo.png"
+logoright_name: "../figures/ou-logo.png"
+
+
+#---BODY---#
+primary_colour:	"#00508F" # Otago Blue
+secondary_colour:	"#F1F4F8" # Otago Yellow
+accent_colour:	"#00508F"
+link_col: '#00508F'
+
+body_bgcol: '#ffffff'
+body_textcol: '#333333'
+body_textsize:	"47px"
+
+author_textsize:	"1.17em"
+authorextra_textsize:	"35px"
+affiliation_textsize:	"35px"
+affiliation_textcol:	'#00508F'
+cite_col: '#00508F'
+
+#---LAYOUT---#
+column_numbers: 3
+
+#---FONT---#
+font_family: 'Open sans'
+font_size: 12pt
+footnote_textcol: '#416EBF'
+reference_textsize:	"25px"
+
+#---OUTPUT---#
+output: 
+  posterdown::posterdown_betterland:
+    self_contained: false
+    pandoc_args: --mathjax
+    number_sections: false
+
+#---BIBLIOGRAPHY OPTIONS---#
+bibliography: "../data/MyLibrary.bib" # name of the .bib file used for referencing
+bibliography_spacing: 0.8 # sets the multiplier for line spacing of bibliography spacing (between 0 and 1)
+bibliography_textsize: "small"  # size of the bibliography text size (handy for one too many references!)
+
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+```
+
+# Introduction
+
+Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow for those who wish to take their `RMarkdown` skills to the conference world. Many creature comforts from `RMarkdown` are available in this package such as `Markdown` section notation, figure captioning, and even citations like this one [@Abbot2017] The rest of this example poster will show how you can insert typical conference poster features into your own document. 
+
+### Rancid - Roots Radicals
+
+Took the 60 bus
+Out of downtown Campbell.
+Ben Zanotto, he was on there
+He was waitin' for me
+All the punk rockers
+And the moon stompers
+Are out on the corners
+Where they're sparing for change
+
+I started thinkin'.
+You know I started drinkin'.
+I don't remember too much of that day.
+Somethin' struck me funny
+When we ran out of money
+Where do you go now when your only 15?
+
+With the music execution (ohhh)
+And the talk of revolution
+It bleeds in me
+Oh and it goes
+
+Give 'em the boot; the roots, the radicals
+Give 'em the boot; you know I'm a radical
+Give 'em the boot; the roots, the reggae on my
+Stereo
+
+The radio was playin', Desmond Dekker was singin'
+On the 43 bus as we climb up the hill
+Nothin' incoming but the reggae drummin',
+And we all come from unloving homes.
+I said; "Why even bother" and I pick up the bottle
+Mr. Bus driver please let these people on
+Rude girl Carol was a mini-skirt girl
+My blurry vision saw nothin' wrong
+
+With the music execution (ohhh)
+And the talk of revolution
+It bleeds in me
+Oh and it goes
+
+Give 'em the boot; the roots, the radicals
+Give 'em the boot; you know I'm a radical
+Give 'em the boot; the roots, the reggae on my
+Stereo
+
+On my stereo!
+Yeah, yeah. Yeah, yeah, yeah, yeah, yeah
+Yeah, yeah. Yeah, yeah, yeah, yeah, yeah
+Yeah, yeah. Yeah, yeah, yeah, yeah, yeah
+Yeah, yeah. Yeah, yeah, yeah, yeah, yeah
+Yeah!
+
+Took the 60 bus
+Out of downtown Campbell.
+Ben Zanotto, he was on there
+He was waitin' for me
+All the punk rockers
+And the moon stompers
+Are out on the corners
+Where they sparing for change
+
+Then the radio was playin', Desmond Dekker was singin'
+On the 43 bus as we climb up the hill
+Rude girl Carol was a mini-skirt girl
+My blurry vision saw nothin' wrong
+
+With the music execution (ohhh)
+And the talk of revolution
+It bleeds in me
+Oh and it goes
+
+Give 'em the boot; the roots, the radicals
+Give 'em the boot; you know I'm a radical
+Give 'em the boot; the roots, the reggae on my
+Stereo
+
+Give 'em the boot; the roots, the radicals
+Give 'em the boot; you know I'm a radical
+Give 'em the boot; the roots, the reggae on my
+Stereo
+
+# Study Site
+
+Here is a map made to show the study site using `ggplot2`, `ggspatial`, and `sf` and you can even reference this with a hyperlink, this will take you to **Figure \ref{mymapfig}**. Lorem ipsum dolor sit amet, [@Abbot2017] consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+\vspace{1cm}
+
+```{r, out.width="50%", fig.cap='This is a map of Canada, the ggspatial package is great for GIS folks in R! \\label{mymapfig}', cache=TRUE}
+library(ggplot2)
+library(ggspatial)
+library(tidyverse)
+library(ggthemes)
+library(sf)
+
+canada <- read_sf("../data/Canada.geojson")
+
+yukon <- canada %>% 
+  filter(PROV == "YT")
+
+ggplot() +
+  ggspatial::layer_spatial(canada,fill = "grey80", colour = "grey60") +
+  ggspatial::layer_spatial(yukon,fill = "yellow", colour = "black") +
+  ggspatial::annotation_north_arrow(location = "br",pad_y = unit(1,"cm"),pad_x = unit(0.7,"cm"), which_north = "true", style = north_arrow_orienteering()) +
+  ggspatial::annotation_scale(location = "br",style = "ticks") +
+  coord_sf() +
+  theme_pander() +
+  theme(legend.position = "none") +
+  NULL
+```
+
+
+# Objectives
+
+1. Easy to use reproducible poster design. 
+2. Integration with `RMarkdown`.
+3. Easy transition from `posterdown` to `thesisdown` or `rticles`
+
+
+# Methods
+
+This package uses the same workflow approach as the `RMarkdown` you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > Latex > PDF.
+```{r}
+knitr::include_graphics("../figures/ou-logo.png")
+```
+
+# Results
+
+Usually you want to have a nice table displaying some important results that you have calcualated. In posterdown this is as easy as using the `kable` table formatting you are probably use to as per typical `RMarkdown` formatting. I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf).
+
+\vspace{5cm}
+
+```{r}
+library(kableExtra)
+library(ggplot2)
+
+data("iris")
+
+kable(iris[1:4,],align = "c", caption = "Tables are a breeze with Kable and Kable extra package!", booktabs = TRUE) %>% 
+  kable_styling(latex_options = c("striped","HOLD_position"),full_width = TRUE, font_size = 12)
+
+```
+
+```{r, out.width='80%', fig.height=6.0, fig.cap='Using ggplot and patchwork to generate a layout of multiple plots in one figure. The iris dataset was used to generate (a) a line graph, (b) a scatterplot, and (c) a boxplot all together!'}
+
+library(tidyverse)
+library(patchwork)
+library(ggthemes)
+
+theme_set(theme_gray() + theme_tufte() + theme(legend.position = "none"))
+
+base <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species))
+  
+p_point <- base + geom_point()
+p_line  <- base + geom_line() 
+p_area  <- base + geom_area()
+p_box1  <- ggplot(iris) + geom_boxplot(aes(x = Species, y = Sepal.Length, fill = Species))
+p_box2  <- ggplot(iris) + geom_boxplot(aes(x = Species, y = Sepal.Width, fill = Species))
+
+p_line + 
+  {p_point + p_box1} +
+  plot_layout(ncol = 1) + plot_annotation(tag_levels = "a", tag_prefix = "(",tag_suffix = ")")
+
+```
+
+# Next Steps
+
+There is still **A LOT** of work to do on this package which include (but are note limited to): 
+
+- Better softcoding for front end user options in YAML
+- Images in the title section for logo placement which is a common attribut to posters as far as I have come to know.
+- Figure out compatiability with `natbib` which wasn't working during the initial set up.
+- MUCH BETTER PACKAGE DOCUMENTATION. For example, there is nothing in the README...
+- Include References section only if initiated by the user like in RMarkdown.
+
+How about a neat table of data? See, Table \@ref(tab:iristable):
+
+```{r, iristable}
+knitr::kable(
+  iris[1:15,1:5], format = "html",
+  caption = "A table made with the **knitr::kable** function.",
+  align = "c", col.names = c("Sepal <br> Length",
+                             "Sepal <br> Width",
+                             "Petal <br> Length",
+                             "Petal <br> Width",
+                             "Species"),
+  escape = FALSE)
+```
+
+# References
