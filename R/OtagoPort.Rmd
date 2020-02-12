@@ -50,7 +50,7 @@ link_col: '#00508F'
 
 body_bgcol: '#ffffff'
 body_textcol: '#333333'
-body_textsize:	"45px"
+body_textsize:	"43px"
 
 author_textsize:	"1.17em"
 authorextra_textsize:	"35px"
@@ -65,7 +65,7 @@ column_numbers: 3
 font_family: 'Open sans'
 font_size: 12pt
 footnote_textcol: '#416EBF'
-reference_textsize:	"25px"
+reference_textsize:	"30px"
 
 #---OUTPUT---#
 output: 
