@@ -5,7 +5,11 @@ Using Brent Thornes Base Posters and converting to Otago University fonts, logos
 
 https://github.com/brentthorne/posterdown
 
+pdf version
 https://github.com/Shedimus/EACR_posterdown
+
+ggplot colours
+https://github.com/thoughtfulbloke/theme_otago
 
 ## Install
 To install the package and template for the posters use 
